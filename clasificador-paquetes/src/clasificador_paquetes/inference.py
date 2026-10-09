@@ -16,11 +16,11 @@ def leer_csv(ruta: Path) -> list[Entrada]:
              row1=Entrada(row)
              entradas.append(row1)
              count+=1
-        except ValidationError as e:
+        except ValueError as e:
             
             print(f"{e}")
         if count==0:
-            raise ValueError 
+            raise ValueError("EstaVacio")
       
     return entradas
 
